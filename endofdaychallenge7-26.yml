@@ -1,0 +1,15 @@
+---
+- name: Target Planet Express Hosts except bender and farnsworth
+  hosts: planetexpress:!farnsworth:bender
+  connection: ssh
+  gather_facts: yes
+
+  tasks:
+  - name: Install figlet, cowsay, bastet using apt
+    apt:
+         pkg:
+           - figlet
+           - cowsay
+           - bastet
+         state: present
+    become: yes
