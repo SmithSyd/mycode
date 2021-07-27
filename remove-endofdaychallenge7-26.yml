@@ -1,11 +1,9 @@
 ---
 - name: Target Planet Express Hosts except bender and farnsworth
   hosts: planetexpress:!farnsworth:bender
-  connection: ssh
-  gather_facts: yes
 
   tasks:
-  - name: Uninstall figlet, cowsay, bastet using apt
+  - name: Uninstall example apps [figlet, cowsay, bastet] using apt
     apt:
          pkg:
            - figlet
