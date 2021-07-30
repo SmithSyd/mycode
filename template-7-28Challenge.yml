@@ -1,0 +1,12 @@
+---
+
+- name: Creating the Playbook for the Wednesday challenge
+  hosts: planetexpress
+  gather_facts: no
+
+  tasks:
+   - name: Push Host IP config file
+     template:
+        src: templates/7-28Challenge.cfg.j2
+        dest: ~/7-28Challenge.cfg
+        # loop: "{{ ansible_play_batch }}"
